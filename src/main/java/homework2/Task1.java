@@ -10,8 +10,11 @@ public class Task1 {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             try {
-                System.out.print("Введите вещественное число: ");
-                float number = Float.parseFloat(scanner.nextLine());
+                System.out.print("Введите вещественное число ('#' чтобы выйти) : ");
+                String line = scanner.nextLine();
+                if(line.equals("#"))
+                    break;
+                float number = Float.parseFloat(line);
                 System.out.printf("Вы ввели число: %f\n", number);
             } catch (NumberFormatException e) {
                 System.out.println("Неверный тип данных. Повторите попытку.");
